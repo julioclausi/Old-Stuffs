@@ -27,16 +27,23 @@ print (string_1[4]) #o
 #print (string_1[5]) ---> IndexError: string index out of range
 
 string_1 = "My Code"
-print(type(string_1)) #<class 'str'>
+print (type(string_1)) #<class 'str'>
 
-#type is not a function, is a callable
+#type is not a function, is a class
 
 my_integer = 123
-print(type(my_integer)) #<class 'int'>
+print (type(my_integer)) #<class 'int'>
 
 #Can I change the type of a var?
 
 my_integer = "A text"
-print(type(my_integer)) #<class 'str'>
+print (type(my_integer)) #<class 'str'>
 
 #the reason is: dynamic typing
+
+lenght = string_1.__len__()
+print (lenght) #7
+lenght = len (string_1)
+print (lenght) #7
+
+#len is a fuction, return the lenght of a string
