@@ -77,3 +77,5 @@ if selecao_usuario.isdigit():
         print ('Opção digitada inválida.')
 else:
     print ('Digite apenas números.')
+
+print ('\nFinalizando aplicação.\n')
