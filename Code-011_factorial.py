@@ -1,4 +1,4 @@
-#Let's try to calculate the factorial of a integer
+#Let's try to calculate the factorial of an integer
 
 number = input('Digit a number: ')
 factorial_number = 1
