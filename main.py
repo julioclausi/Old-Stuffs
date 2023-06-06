@@ -1,6 +1,4 @@
 import os
-from pynput import keyboard
-from pynput.keyboard import Key
 
 #Reading the map
 def read_the_map():
