@@ -1,0 +1,20 @@
+{
+    "Countries": {
+        "Brazil": "Brasilia",
+        "Italy": "Rome",
+        "France": "Paris",
+        "Portugal": "Lisbon",
+        "Spain": "Madrid",
+        "Another Country": "Any Capital"
+    },
+    "People": {
+        "Aaron": "Paul",
+        "Bruce": "Lee",
+        "Charles": "Leclerc"
+    },
+    "Planets": {
+        "Jupiter": "The big one",
+        "Saturn": "The lord of the rings",
+        "Pluto": "Pluto is no longer a planet"
+    }
+}
