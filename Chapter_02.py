@@ -5,8 +5,7 @@
 # Each instruction properly defined
 # No ambiguous instruction
 # Be executable in a finite amount of time and in a finite number of steps
-# Clear input
-# Clear output
+# Clear input, Clear output
 
 # Big O notation (O)
 # Omega notation (Ω)
