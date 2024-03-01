@@ -48,3 +48,24 @@ print (type(None))
 # Sequence (immutable): str, tuple, range
 # Sequence (mutable): list
 
+# Identity: The 'is' operator is used to test if two variables refer to the same object
+# Membership: 'in' or 'not in'
+
+# Tuple: Immutable!
+
+# Dict: {key:value}
+# dict.clear()
+# dict.get(<key>)
+# dict.items()
+# dict.keys()
+# dict.values()
+# dict.pop()
+# dict.popitem()
+# dict.update(<obj>)
+
+# Set: mutable
+# Frozenset: immutable
+
+# Collections module: namedtuple, deque, defaultdict, Chainmap, Counter...
+
+# Summary of Chapter 01: data types, some functions, collections, just the basics.
