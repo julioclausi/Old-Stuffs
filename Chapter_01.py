@@ -69,3 +69,5 @@ print (type(None))
 # Collections module: namedtuple, deque, defaultdict, Chainmap, Counter...
 
 # Summary of Chapter 01: data types, some functions, collections, just the basics.
+
+# Done! From page 18 to page 49
