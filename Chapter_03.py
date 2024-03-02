@@ -69,6 +69,8 @@
     # for i in range(5):
     #     print (fib(i))
 
+    # Memoization technique
+
     # The idea here is to save pre calculated values
     # def dyna_fib(n): 
     #     if n == 0: 
@@ -84,3 +86,8 @@
     #     print(dyna_fib(i)) 
 
 # Greedy algorithms
+# Prim, Dijkstra, Kruskal, Traveling salesman problem...
+
+# Summary: a general look about algorithm design techniques. 
+
+# Done! From page 72 to page 104
