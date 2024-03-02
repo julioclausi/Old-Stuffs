@@ -59,4 +59,28 @@
     # print (merge_sort([9,8,7,6,5,4,3,2,1]))
 
 # Dynamic programming
+# This technique starts from the initial problem set and divides it into small subproblems
+    # Fibonacci problem
+    # def fib(n):
+    #     if n <= 1:
+    #         return 1
+    #     else:
+    #         return fib(n-1) + fib(n-2)
+    # for i in range(5):
+    #     print (fib(i))
+
+    # The idea here is to save pre calculated values
+    # def dyna_fib(n): 
+    #     if n == 0: 
+    #         return 0 
+    #     if n == 1: 
+    #         return 1   
+    #     if lookup[n] is not None: 
+    #         return lookup[n] 
+    #     lookup[n] = dyna_fib(n-1) + dyna_fib(n-2) 
+    #     return lookup[n] 
+    # lookup = [None]*(1000) 
+    # for i in range(6):  
+    #     print(dyna_fib(i)) 
+
 # Greedy algorithms
