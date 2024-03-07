@@ -22,7 +22,7 @@ class Sudoku ():
                 print('──────+───────+──────')
 
 def read_the_game ():
-    with open('Game.txt') as tex:
+    with open('Game2.txt') as tex:
         list_of_strings = tex.readlines()
     return list_of_strings
 
