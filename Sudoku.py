@@ -336,4 +336,9 @@ while not end_game(jogo.matrix):
     finder_column (jogo.matrix)
     finder_block (jogo.matrix)
 
+# hard puzzles in infinity loop :(
+# sometimes the code find 2 possibilities
+# so I think I have to implement a binary tree looking for the best solution
+# and recursive codes
+
 print (f"PUZZLE SOLVED! Steps: {jogo.steps}")
