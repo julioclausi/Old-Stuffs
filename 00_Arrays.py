@@ -21,8 +21,9 @@ for i in range(0,MAX_LENGHT):
 # Conclusion:
 # An array is a sequential list of data
 # Each element is stored right after the previous one in memory
-# Arrays are very fast since each element follows on from the previous one
+# Arrays are very fast to access elements since each element follows on from the previous one
 # But if your array is really big and you are low in memory it could be impossible to find large enough storage to fit your entire array
+# Arrays are very slow to insert and delete elements because you have to reorganize elements in the positions after the insertion/exclusion position
 
 # https://docs.python.org/3/library/exceptions.html#MemoryError
 # s = []
