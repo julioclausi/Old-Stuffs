@@ -29,4 +29,4 @@ print (f'Here the address of first_node.next ({first_node.next}) is the same of 
 # Data is: 2
 # Nex node address: None
 # 
-# Here the address of first_node.next (<__main__.Node object at 0x000001AB1C48F750>) is the same of second_node (<__main__.Node object at 0x000001AB1C48F750>).
+# Here the address of first_node.next (<__main__.Node object at 0x000001AB1C48F750>) is the same of second_node (<__main__.Node object at 0x000001AB1C48F750>). 
