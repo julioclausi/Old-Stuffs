@@ -3,9 +3,9 @@
 # A node is a container of data, together with one or more links to other nodes
 
 class Node():
-    def __init__(self, data=0,next_node=None):
+    def __init__(self, data=None):
         self.data = data
-        self.next = next_node
+        self.next = None
 
 first_node = Node(1) # create a node with data 1
 print (f'First node address: {first_node}') # print the address of first_node
