@@ -73,10 +73,19 @@ class SinglyLinkedList:
                 self.head = self.head.next
         self.print_list()
 
+    def search(self,data):
+        for node in self.iter():
+            if data == node:
+                return True
+        return False
+
 linked_list = SinglyLinkedList()
 linked_list.append('[ABC]')
 linked_list.append('[DEF]')
 linked_list.append('[GHI]')
+print ('\nSearching:')
+print (f"[ABC]: {linked_list.search('[ABC]')}")
+print (f"[XYZ]: {linked_list.search('[XYZ]')}")
 linked_list.delete_last_node()
 linked_list.delete_first_node()
 linked_list.delete_last_node()
@@ -93,6 +102,10 @@ linked_list.delete_last_node()
 
 # Appending [GHI]
 # Linked List: [ABC] -> [DEF] -> [GHI] -> None
+
+# Searching:
+# [ABC]: True
+# [XYZ]: False
 
 # Attempt to remove the last node
 # Linked List: [ABC] -> [DEF] -> None
