@@ -46,3 +46,4 @@ for i in lista:
     arvore.insere(i)
 
 inorder(arvore.raiz)
+#teste
