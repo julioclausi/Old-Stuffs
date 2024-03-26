@@ -10,6 +10,7 @@ class Jogo ():
         print (f'-----')
         print (f'{self.tabuleiro[6]}|{self.tabuleiro[7]}|{self.tabuleiro[8]}')
 
+    # Função que retorna uma lista com as jogadas possíveis
     def jogadas_possiveis (self):
         jogadas = []
         for i in range (0,9):
@@ -17,6 +18,7 @@ class Jogo ():
                 jogadas.append(i)
         return jogadas
 
+    # Verifica se teve vitória
     def vitoria (self):
         if self.tabuleiro[0] == self.tabuleiro[1] and self.tabuleiro[0] == self.tabuleiro[2] and self.tabuleiro[0] != ' ':
             return True
@@ -35,6 +37,8 @@ class Jogo ():
         elif self.tabuleiro[2] == self.tabuleiro[4] and self.tabuleiro[2] == self.tabuleiro[6] and self.tabuleiro[2] != ' ':
             return True
 
+    # Se player for o jogador, pede a jogada
+    # Se player for o computador, faz a melhor jogada
     def jogada (self,player):
         if player == 1:
             # XXXXX
@@ -127,7 +131,7 @@ def melhor_jogada (jogo_teste: Jogo):
 jogo = Jogo()
 # jogo.teste1()
 jogo.show()
-jogo.turno = 1
+jogo.turno = 1                  
 
 while True:
     jogo.jogada(jogo.turno)
