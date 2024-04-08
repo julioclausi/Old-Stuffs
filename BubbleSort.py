@@ -18,7 +18,13 @@ def bubblesort(my_list):
                 my_list[j+1] = aux
                 printing(my_list)
 
-my_list = random.sample(range(0,30),15)
+my_list = []
+
+for i in range(1,40,2):
+    my_list.append(i)
+
+random.shuffle(my_list)
+
 print(my_list)
 input('Press [Enter] to start')
 printing(my_list)
