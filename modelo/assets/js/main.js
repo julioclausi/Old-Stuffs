@@ -74,8 +74,7 @@ function jeitoFacil() {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
-        day: 'numeric',
-        timeStyle: 'short'
+        day: 'numeric'
     };
     h1.innerHTML = data.toLocaleDateString('pt-BR', options);
 }
