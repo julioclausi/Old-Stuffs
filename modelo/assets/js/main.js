@@ -66,3 +66,18 @@ data.innerHTML = '';
 p.classList.add('classe-paragrafo');
 p.innerHTML = dataBrasil;
 data.appendChild(p);
+
+function jeitoFacil() {
+    const h1 = document.querySelector('.container h1');
+    const data = new Date();
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeStyle: 'short'
+    };
+    h1.innerHTML = data.toLocaleDateString('pt-BR', options);
+}
+
+jeitoFacil();
