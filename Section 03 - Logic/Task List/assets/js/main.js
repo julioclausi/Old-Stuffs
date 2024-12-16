@@ -1,82 +1,143 @@
-function getDiaDaSemana(diaDaSemana) {
-    switch (diaDaSemana) {
-        case 0:
-            return 'Domingo';
-        case 1:
-            return 'Segunda-feira';
-        case 2:
-            return 'Terça-feira';
-        case 3:
-            return 'Quarta-feira';
-        case 4:
-            return 'Quinta-feira';
-        case 5:
-            return 'Sexta-feira';
-        case 6:
-            return 'Sábado';
+function adicionarTarefa(texto){
+    if (!texto) return;
+    const novaTask = document.createElement('li');
+    novaTask.innerText = texto;
+    const botaoApagar = document.createElement('button');
+    botaoApagar.setAttribute('class', 'apagar');
+    botaoApagar.setAttribute('title', 'Apagar esta tarefa');
+    botaoApagar.innerText = "Apagar";
+    novaTask.appendChild(botaoApagar);
+    tasks.appendChild(novaTask);
+    salvarTarefas();
+}
+
+const tasks = document.querySelector(".tasks");
+const inputTask = document.querySelector(".input-task");
+const btnTask = document.querySelector(".btn-task");
+
+btnTask.addEventListener("click", function(){
+    adicionarTarefa(inputTask.value);
+});
+
+inputTask.addEventListener("keypress", function(e) {
+    if (e.keyCode === 13) {
+        adicionarTarefa(inputTask.value);
+        inputTask.value = "";
+        inputTask.focus();
+    }
+});
+
+document.addEventListener('click', function(e){
+    const el = e.target;
+    if (el.classList.contains('apagar')){
+        el.parentElement.remove();
+        salvarTarefas();
+    }
+})
+
+function salvarTarefas () {
+    const liTasks = tasks.querySelectorAll('li');
+    const taskList = [];
+
+    for (let task of liTasks) {
+        taskList.push(task.innerText.replace('Apagar',''));
+    }
+
+    const taskJSON = JSON.stringify(taskList);
+    localStorage.setItem('listaDeTarefas', taskJSON);
+}
+
+function carregarTarefas () {
+    const tarefas = localStorage.getItem('listaDeTarefas');
+    const taskList = JSON.parse(tarefas);
+
+    for (let task of taskList) {
+        adicionarTarefa(task)
     }
 }
 
-function getMes(mes) {
-    switch (mes) {
-        case 0:
-            return 'Janeiro';
-        case 1:
-            return 'Fevereiro';
-        case 2:
-            return 'Março';
-        case 3:
-            return 'Abril';
-        case 4:
-            return 'Maio';
-        case 5:
-            return 'Junho';
-        case 6:
-            return 'Julho';
-        case 7:
-            return 'Agosto';
-        case 8:
-            return 'Setembro';
-        case 9:
-            return 'Outubro';
-        case 10:
-            return 'Novembro';
-        case 11:
-            return 'Dezembro';
-    }
+carregarTarefas();
+
+
+/*
+
+const inputTarefa = document.querySelector('.input-tarefa');
+const btnTarefa = document.querySelector('.btn-tarefa');
+const tarefas = document.querySelector('.tarefas');
+
+function criaLi() {
+  const li = document.createElement('li');
+  return li;
 }
 
-function functionDataBrasil() {
-    const data = new Date();
-    const dia = data.getDate();
-    const mes = data.getMonth();
-    const ano = data.getFullYear();
-    const diaDaSemana = data.getDay();
-    const hora = data.getHours();
-    const minuto = data.getMinutes();
-    let texto = '';
-    texto += `${getDiaDaSemana(diaDaSemana)}, ${dia} de ${getMes(mes)} de ${ano}, ${hora}:${minuto>=10 ? minuto : '0' + minuto}`;
-    return texto;
+inputTarefa.addEventListener('keypress', function(e) {
+  if (e.keyCode === 13) {
+    if (!inputTarefa.value) return;
+    criaTarefa(inputTarefa.value);
+  }
+});
+
+function limpaInput() {
+  inputTarefa.value = '';
+  inputTarefa.focus();
 }
 
-const dataBrasil = functionDataBrasil()
-const data = document.querySelector('.data');
-const p = document.createElement('p');
-data.innerHTML = '';
-p.classList.add('classe-paragrafo');
-p.innerHTML = dataBrasil;
-data.appendChild(p);
-
-function jeitoFacil() {
-    const h1 = document.querySelector('.container h1');
-    const data = new Date();
-    const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    };
-    h1.innerHTML = data.toLocaleDateString('pt-BR', options);
+function criaBotaoApagar(li) {
+  li.innerText += ' ';
+  const botaoApagar = document.createElement('button');
+  botaoApagar.innerText = 'Apagar';
+  // botaoApagar.classList.add('apagar');
+  botaoApagar.setAttribute('class', 'apagar');
+  botaoApagar.setAttribute('title', 'Apagar esta tarefa');
+  li.appendChild(botaoApagar);
 }
 
-jeitoFacil();
+function criaTarefa(textoInput) {
+  const li = criaLi();
+  li.innerText = textoInput;
+  tarefas.appendChild(li);
+  limpaInput();
+  criaBotaoApagar(li);
+  salvarTarefas();
+}
+
+btnTarefa.addEventListener('click', function() {
+  if (!inputTarefa.value) return;
+  criaTarefa(inputTarefa.value);
+});
+
+document.addEventListener('click', function(e) {
+  const el = e.target;
+
+  if (el.classList.contains('apagar')) {
+    el.parentElement.remove();
+    salvarTarefas();
+  }
+});
+
+function salvarTarefas() {
+  const liTarefas = tarefas.querySelectorAll('li');
+  const listaDeTarefas = [];
+
+  for (let tarefa of liTarefas) {
+    let tarefaTexto = tarefa.innerText;
+    tarefaTexto = tarefaTexto.replace('Apagar', '').trim();
+    listaDeTarefas.push(tarefaTexto);
+  }
+
+  const tarefasJSON = JSON.stringify(listaDeTarefas);
+  localStorage.setItem('tarefas', tarefasJSON);
+}
+
+function adicionaTarefasSalvas() {
+  const tarefas = localStorage.getItem('tarefas');
+  const listaDeTarefas = JSON.parse(tarefas);
+
+  for(let tarefa of listaDeTarefas) {
+    criaTarefa(tarefa);
+  }
+}
+adicionaTarefasSalvas();
+
+
+*/
