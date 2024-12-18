@@ -58,5 +58,18 @@ form button:hover {
 }
 
 .calculadora {
-  width: 500px;
+  width: 400px;
+}
+
+.btn {
+  font-size:2em;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.display {
+  width: 100%;
+  font-size:3em;
+  text-align: right;
 }
