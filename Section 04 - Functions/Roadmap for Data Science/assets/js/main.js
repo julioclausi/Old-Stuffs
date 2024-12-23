@@ -36,3 +36,5 @@ for (let i = 0; i < itens.length; i++) {
 }
 //Roadmap
 //For Data Science
+//A ideia aqui é apenas ter um roadmap de skills e projetos
+//E treinar algumas coisas básicas de JS
