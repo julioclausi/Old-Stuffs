@@ -1,7 +1,7 @@
 function Pessoa(nome, sobrenome) {
     this.nome = nome;
     this.sobrenome = sobrenome;
-    return this;
+    // não precisa do return this;
 }
 
 const pessoa = new Pessoa('Julio', 'Roberto');
