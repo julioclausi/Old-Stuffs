@@ -19,7 +19,7 @@ console.log(maisNomes.length); //atributo
 console.log(removidoDoComeco);
 console.log(removidoDoFinal);
 
-const frase = 'Era uma vez';
+const frase = 'Uma frase bem longa';
 const letras = [...frase];
 const palavras = frase.split(' ');
 console.log(letras);
