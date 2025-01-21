@@ -15,7 +15,6 @@ const request = obj => {
     });
 };
 
-
 document.addEventListener('click', e => {
     const el = e.target;
     const tag = el.tagName.toLowerCase();
@@ -25,16 +24,13 @@ document.addEventListener('click', e => {
     }
 });
 
-function carregaPagina(el) {
+async function carregaPagina(el) {
     const href = el.getAttribute('href');
     const objConfig = {
         method: 'GET',
         url: href
     };
-    request(objConfig)
-        .then(response => {
-            const resultado = document.querySelector('.resultado');
-            resultado.innerHTML = response;
-        })
-        .catch(errorText => console.log(errorText));
+    const response = await request(objConfig);
+    const resultado = document.querySelector('.resultado');
+    resultado.innerHTML = response;
 }
