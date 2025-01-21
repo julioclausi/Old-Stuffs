@@ -1,17 +1,20 @@
 // Requisição assíncrona
+
 const request = obj => {
-    const xhr = new XMLHttpRequest();
-    //xhr.open('GET','URL',true);
-    xhr.open(obj.method, obj.url, true);
-    xhr.send();
-    xhr.addEventListener('load', () => {
-        if (xhr.status >= 200 && xhr.status < 300) {
-            obj.success(xhr.responseText);
-        } else {
-            obj.error(xhr.statusText);
-        }
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open(obj.method, obj.url, true);
+        xhr.send();
+        xhr.addEventListener('load', () => {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                resolve(xhr.responseText);
+            } else {
+                reject(xhr.statusText);
+            }
+        });
     });
 };
+
 
 document.addEventListener('click', e => {
     const el = e.target;
@@ -24,16 +27,14 @@ document.addEventListener('click', e => {
 
 function carregaPagina(el) {
     const href = el.getAttribute('href');
-
-    request({
+    const objConfig = {
         method: 'GET',
-        url: href,
-        success(response) {
+        url: href
+    };
+    request(objConfig)
+        .then(response => {
             const resultado = document.querySelector('.resultado');
             resultado.innerHTML = response;
-        },
-        error(errorText) {
-            console.log(errorText);
-        }
-    });
+        })
+        .catch(errorText => console.log(errorText));
 }
