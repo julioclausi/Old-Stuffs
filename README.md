@@ -5,4 +5,4 @@
 ## Chapter 03 - Done
 ## Chapter 04 - Done
 ## Chapter 05 - Done
-## Chapter 06 - Studying
+## Chapter 06 - Done
