@@ -1,0 +1,20 @@
+git remote -v
+git branch -a -vv
+
+git remote add repo_name repo_link
+git fetch repo_name
+
+git remote -v
+
+git checkout -b repo_name repo_name/master
+
+git branch
+git checkout master
+git checkout repo_name
+
+mkdir repo_name
+git mv * repo_name
+git commit -m "moved files into a subfolder"
+
+git checkout master
+git merge repo_name
