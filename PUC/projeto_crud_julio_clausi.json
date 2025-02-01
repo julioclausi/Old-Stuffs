@@ -1,0 +1,62 @@
+{
+    "Estudantes": [
+        {
+            "codigo": 1,
+            "nome": "Julio",
+            "cpf": "073"
+        },
+        {
+            "codigo": 2,
+            "nome": "Jessica",
+            "cpf": "093"
+        }
+    ],
+    "Professores": [
+        {
+            "codigo": 1,
+            "nome": "Vado",
+            "cpf": "123"
+        },
+        {
+            "codigo": 3,
+            "nome": "Hayashi",
+            "cpf": "456"
+        }
+    ],
+    "Disciplinas": [
+        {
+            "codigo": 1,
+            "nome": "Biologia"
+        },
+        {
+            "codigo": 2,
+            "nome": "F\u00edsica"
+        },
+        {
+            "codigo": 3,
+            "nome": "Hist\u00f3ria"
+        },
+        {
+            "codigo": 4,
+            "nome": "Matem\u00e1tica"
+        }
+    ],
+    "Turmas": [
+        {
+            "codigo": 1,
+            "professor": 1,
+            "disciplina": 1
+        },
+        {
+            "codigo": 2,
+            "professor": 3,
+            "disciplina": 2
+        }
+    ],
+    "Matr\u00edculas": [
+        {
+            "turma": 2,
+            "estudante": 1
+        }
+    ]
+}
